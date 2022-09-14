@@ -1,0 +1,6 @@
+/node_modules
+/templates
+.DS_Store
+.vscode
+*.code-workspace
+main.js
