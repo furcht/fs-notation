@@ -16,12 +16,13 @@ const fsNotation = require("fs-notation");
 //-or-//
 import fsNotation from "fs-notation";
 
-// vvv Now lets start calling some methods defined below vvv
+/* vvv Now lets start calling some methods defined below vvv */
 ```
 
 ## The Deets ##
 ### getFiles(rootPath) ###
 Returns your folder tree in JSON format
+
 *rootPath [STRING]* - Path to your root folder
 ```
 const fsNotation = require("fs-notation");
