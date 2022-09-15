@@ -1,23 +1,31 @@
 # FS-Notation (Beta) #
-As your app grows, we can get some complicated folder structures. Use "fs-notation" to convert your folder structure into a familiar JSON format to do what you will with your files.
+As your app grows, we can get some complicated folder structures. Use "fs-notation" to convert your folder structure into a friendly JSON object to do as you will with your files.
 
 ## The Rundown ##
-It's one thing to have an organized folder structure but the moment you need to poke around your folder tree via code, things can get a little cluttered. The goal of this project is to convert your folder tree into JSON format and offer some benefits as batch processing and grouping. So it'll convert your folder tree from "_src/templates/html/index.html" to "_src.templates.html.index_html" giving your files quick access via JSON.
+It's one thing to have an organized folder structure but the moment you need to poke around your folder tree via code, things can get a little cluttered. The goal of this project is to convert your folder tree to JSON and offer some benefits as batch processing and grouping (In Development). See below as I make my best attempt to lay things out simply.
 
 ## Usage ##
-Install it into your app first, of course!
+Install it into your app, of course!
 ```
 npm i fs-notation
 ```
-Next up, just add it into your project and use away!
+Now lets add it to your project for some good use!
 ```
 //-- slap this package into your project
 const fsNotation = require("fs-notation");
 //-or-//
 import fsNotation from "fs-notation";
 
-//-- call a method to get that JSON
-fsNotation.getFiles("./rootPath");
+// vvv Now lets start calling some methods defined below vvv
+```
+
+## The Deets ##
+### getFiles(rootPath) ###
+Returns your folder tree in JSON format
+*rootPath [STRING]* - Path to your root folder
+```
+const fsNotation = require("fs-notation");
+let folderObj = fsNotation.getFiles("./rootPath");
 /*
 {
     rootPath: {
@@ -30,16 +38,6 @@ fsNotation.getFiles("./rootPath");
     }
 }
 */
-/* Other methods defined below */
-```
-
-## The Deets ##
-### getFiles("./rootPath") ###
-Converts your string to Camel Case format, possibly the most common format in Javascript.
-```
-const st = require("string-therapy");
-let newString = new st("Some String");
-newString.toCamelCase(); //- Outputs: someString
 ```
 
 ### Log ###
