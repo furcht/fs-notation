@@ -12,6 +12,6 @@
     "@types/node": "^18.0.6"
   },
   "dependencies": {
-    "string-therapy": "^0.1.0"
+    "string-therapy": "^2.1.1"
   }
 }
