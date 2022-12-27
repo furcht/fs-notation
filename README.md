@@ -141,5 +141,6 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 
 
 ### Log ###
+- 1.0.1 - Meta data updates
 - 1.0.0 - Initial Build
 - 0.1.0 - First Publish
