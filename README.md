@@ -1,4 +1,4 @@
-# FS-Notation (Beta) #
+# FS-Notation #
 As your app grows, we can get some complicated folder structures. Use "fs-notation" to convert your folder structure into a friendly JSON object to do as you will with your files.
 
 ## The Rundown ##
@@ -141,4 +141,5 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 
 
 ### Log ###
+- 1.0.0 - Initial Build
 - 0.1.0 - First Publish
