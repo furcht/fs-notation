@@ -9,7 +9,7 @@
 		"rootDir": "./_src", /* Specify the root folder within your source files. */
 
 		/* Emit */
-		"outDir": "./node_modules/fs-notation/lib", /* Specify an output folder for all emitted files. */
+		"outDir": "./lib", /* Specify an output folder for all emitted files. */
 
 		/* Interop Constraints */
 		"esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
