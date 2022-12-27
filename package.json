@@ -1,6 +1,6 @@
 {
   "name": "fs-notation",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Standardized dot notation for file streams",
   "main": "lib/index.js",
   "scripts": {
