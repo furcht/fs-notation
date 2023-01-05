@@ -40,7 +40,7 @@ let fsn = fsNotation("./_sourceFiles", [
         ext: ".model.js"
     }
 ]);
-let viewFiles = fsn.getGroups("view_files");
+let viewFiles = fsn.getGroups(["view_files", model_files]);
 /*
 {
     view_files: [
@@ -51,6 +51,16 @@ let viewFiles = fsn.getGroups("view_files");
         {
             filename: "button.view.html",
             path: "./rootPath/subPath/button.view.html"
+        }
+    ],
+    model_files: [
+        {
+            filename: "index.model.js",
+            path: "./rootPath/subPath/index.model.js"
+        },
+        {
+            filename: "button.model.js",
+            path: "./rootPath/subPath/button.model.js"
         }
     ]
 }
@@ -65,12 +75,10 @@ const fsNotation = require("fs-notation");
 let folderObj = fsNotation.getFiles("./rootPath");
 /*
 {
-    rootPath: {
-        subPath: {
-            index_html: {
-                filename: "index.html",
-                path: "./rootPath/subPath/index.html"
-            }
+    subFolder: {
+        index_html: {
+            filename: "index.html",
+            path: "./rootPath/subPath/index.html"
         }
     }
 }
@@ -93,18 +101,16 @@ let allFiles = fsn.getTypes(); //-- Return all files found within the root path
 
 /*
 //-- OUTPUT EXAMPLE --//
-{
-    js: [
-        {
-            filename: "formActions.js",
-            path: "./rootPath/subPath/formActions.js"
-        },
-        {
-            filename: "btnActions.js",
-            path: "./rootPath/subPath/btnActions.js"
-        }
-    ]
-}
+[
+    {
+        filename: "formActions.js",
+        path: "./rootPath/subPath/formActions.js"
+    },
+    {
+        filename: "btnActions.js",
+        path: "./rootPath/subPath/btnActions.js"
+    }
+]
 */
 ```
 
@@ -124,23 +130,22 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 
 /*
 //-- OUTPUT EXAMPLE --//
-{
-    view_files: [
-        {
-            filename: "form.view.html",
-            path: "./rootPath/subPath/form.view.html"
-        },
-        {
-            filename: "button.view.html",
-            path: "./rootPath/subPath/button.view.html"
-        }
-    ]
-}
+[
+    {
+        filename: "form.view.html",
+        path: "./rootPath/subPath/form.view.html"
+    },
+    {
+        filename: "button.view.html",
+        path: "./rootPath/subPath/button.view.html"
+    }
+]
 */
 ```
 
 
 ### Log ###
+- 1.1.0 - Cleaned up the Returns
 - 1.0.1 - Meta data updates
 - 1.0.0 - Initial Build
 - 0.1.0 - First Publish

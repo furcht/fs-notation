@@ -1,6 +1,5 @@
 /node_modules
 /templates
-/sample
 .DS_Store
 .vscode
 *.code-workspace

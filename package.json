@@ -2,7 +2,7 @@
   "name": "fs-notation",
   "version": "1.0.1",
   "description": "Standardized dot notation for file streams",
-  "main": "lib/index.js",
+  "main": "lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,5 +26,8 @@
   },
   "dependencies": {
     "string-therapy": "^2.1.1"
-  }
+  },
+  "files": [
+    "lib/index.js"
+  ]
 }

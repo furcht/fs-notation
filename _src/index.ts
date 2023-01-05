@@ -77,8 +77,11 @@ export class FsNotation implements FsInterface {
         if(!name) return _ref;
         else if(typeof name === 'string') name = [name];
         else if(typeof name![0] != 'string') return { status: false };
+
+        let nameLength:number = name.length;
         
-        if(name.length) {
+        if(nameLength==1) _output = _ref[name[0]];
+        else if(nameLength > 1) {
             name.forEach((id) => {
                 if(_ref[id]) _output[id] = _ref[id];
             });
@@ -102,7 +105,7 @@ export class FsNotation implements FsInterface {
             if(!/^\./.test(obj.ext)) obj.ext = "." + obj.ext;
 
             //-- builds a dictionary to target the file group
-            this.#groupExtensions[_st(obj.ext).toSnakeCase] = groupID
+            this.#groupExtensions[_st(obj.ext).toSnakeCase] = groupID.toSnakeCase;
         });
     }
 
@@ -139,6 +142,7 @@ export class FsNotation implements FsInterface {
             if(/^\.+/.test(file)) continue; //-- bypass hidden files (MacOS)
             fullPath = this.#rootPath + "/" + file;
             splitRoute = fullPath.split("/");
+            // console.log(splitRoute);
 
             if(/^\.+$/.test(splitRoute[0])) splitRoute.splice(0,1); //-- remove "./" from beginning
 
@@ -218,13 +222,15 @@ export class FsNotation implements FsInterface {
             endObj = pathObj ? {"path":pathObj.path} : {};
             groupIndex = splittedPath.length-1;
             splittedPath.forEach((fileName, index) => {
-                filenameOG = fileName;
-                fileName = _st(fileName).toSnakeCase;
-                if(!tempOutput[fileName]) {
-                    endObj['filename'] = filenameOG;
-                    tempOutput[fileName] = (index===groupIndex) ? endObj : {};
+                if(index!=0) {
+                    filenameOG = fileName;
+                    fileName = _st(fileName).toSnakeCase;
+                    if(!tempOutput[fileName]) {
+                        endObj['filename'] = filenameOG;
+                        tempOutput[fileName] = (index===groupIndex) ? endObj : {};
+                    }
+                    tempOutput = tempOutput[fileName];
                 }
-                tempOutput = tempOutput[fileName];
             });
         }
     }
