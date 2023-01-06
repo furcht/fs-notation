@@ -72,7 +72,8 @@ Returns your folder tree in JSON format
 
 ```
 const fsNotation = require("fs-notation");
-let folderObj = fsNotation.getFiles("./rootPath");
+let sourceFiles = fsNotation("./rootPath");
+let sourceTree = sourceFiles.tree;
 /*
 {
     subFolder: {
@@ -145,6 +146,7 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 
 
 ### Log ###
+- 1.1.1 - Updated a README error
 - 1.1.0 - Cleaned up the Returns
 - 1.0.1 - Meta data updates
 - 1.0.0 - Initial Build
