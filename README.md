@@ -14,7 +14,10 @@ Now lets add it to your project for some good use!
 //-- slap this package into your project
 const fsNotation = require("fs-notation");
 //-or-//
-import fsn, {FsNotation} from "fs-notation";
+import fsn from "fs-notation";
+//-Import type for Typescript Use-//
+import { FsNotation } from "fs-notation/lib/FsNotation"; //- Typescript Use
+let sourceFiles:FsNotation = fsn("/rootDir");
 
 //-- initiate the app with your directory
 let sourceFiles = fsn("./_src");
@@ -146,6 +149,7 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 
 
 ### Log ###
+- 1.2.0 - Typescript Optimization
 - 1.1.1 - Updated a README error
 - 1.1.0 - Cleaned up the Returns
 - 1.0.1 - Meta data updates
