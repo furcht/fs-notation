@@ -34,3 +34,4 @@ export declare class FsNotation implements FsInterface {
     private buildRawLibrary;
     private buildPathTree;
 }
+//# sourceMappingURL=FsNotation.d.ts.map

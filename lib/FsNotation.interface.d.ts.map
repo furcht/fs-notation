@@ -1,0 +1,1 @@
+{"version":3,"file":"FsNotation.interface.d.ts","sourceRoot":"","sources":["../_src/FsNotation.interface.ts"],"names":[],"mappings":"AAAA,UAAU,WAAW;IACjB,IAAI,IAAI,IAAG,MAAM,CAAC;IAClB,QAAQ,CAAC,IAAI,CAAC,EAAC,MAAM,GAAG,KAAK,CAAC,MAAM,CAAC,GAAE,MAAM,CAAC;IAC9C,SAAS,CAAC,IAAI,CAAC,EAAC,MAAM,GAAG,KAAK,CAAC,MAAM,CAAC,GAAE,MAAM,CAAC;CAClD"}

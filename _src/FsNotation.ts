@@ -150,6 +150,7 @@ export class FsNotation implements FsInterface {
                 isDir: this.isDir(fullPath),
                 filename: file,
                 path: fullPath,
+                relPath: this.#rootPath,
                 splitPath: splitRoute
             });
         }
@@ -165,6 +166,7 @@ export class FsNotation implements FsInterface {
         */
         if(this.#pathLog.length) {
             let pathObj:any = this.#pathLog.pop();
+            console.log("pathObj:", pathObj);
             let baseObj:object = {
                 "filename": pathObj.filename,
                 "path": pathObj.path
@@ -219,15 +221,21 @@ export class FsNotation implements FsInterface {
             tempOutput = this.#rootTree;
             pathID = _st(splittedPath.join("_")).toSnakeCase; // folder_folder2_file
             pathObj = this.#allFiles[pathID];
-            endObj = pathObj ? {"path":pathObj.path} : {};
+            endObj = pathObj ? {"path":pathObj.relPath} : {};
             groupIndex = splittedPath.length-1;
+            console.log("EO:", pathObj);
             splittedPath.forEach((fileName, index) => {
                 if(index!=0) {
                     filenameOG = fileName;
                     fileName = _st(fileName).toSnakeCase;
                     if(!tempOutput[fileName]) {
                         endObj['filename'] = filenameOG;
-                        tempOutput[fileName] = (index===groupIndex) ? endObj : {};
+                        if(index===groupIndex) {
+                            endObj['_isFile_'] = true;
+                            tempOutput[fileName] = endObj;
+                        } else {
+                            tempOutput[fileName] = {};
+                        }
                     }
                     tempOutput = tempOutput[fileName];
                 }
