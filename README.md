@@ -49,21 +49,25 @@ let viewFiles = fsn.getGroups(["view_files", model_files]);
     view_files: [
         {
             filename: "index.view.html",
-            path: "./rootPath/subPath/index.view.html"
+            path: "./rootPath/subPath/index.view.html",
+            _isFile_: true
         },
         {
             filename: "button.view.html",
-            path: "./rootPath/subPath/button.view.html"
+            path: "./rootPath/subPath/button.view.html",
+            _isFile_: true
         }
     ],
     model_files: [
         {
             filename: "index.model.js",
-            path: "./rootPath/subPath/index.model.js"
+            path: "./rootPath/subPath/index.model.js",
+            _isFile_: true
         },
         {
             filename: "button.model.js",
-            path: "./rootPath/subPath/button.model.js"
+            path: "./rootPath/subPath/button.model.js",
+            _isFile_: true
         }
     ]
 }
@@ -82,7 +86,8 @@ let sourceTree = sourceFiles.tree;
     subFolder: {
         index_html: {
             filename: "index.html",
-            path: "./rootPath/subPath/index.html"
+            path: "./rootPath/subPath/index.html",
+            _isFile_: true
         }
     }
 }
@@ -108,11 +113,13 @@ let allFiles = fsn.getTypes(); //-- Return all files found within the root path
 [
     {
         filename: "formActions.js",
-        path: "./rootPath/subPath/formActions.js"
+        path: "./rootPath/subPath/formActions.js",
+        _isFile_: true
     },
     {
         filename: "btnActions.js",
-        path: "./rootPath/subPath/btnActions.js"
+        path: "./rootPath/subPath/btnActions.js",
+        _isFile_: true
     }
 ]
 */
@@ -137,11 +144,13 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 [
     {
         filename: "form.view.html",
-        path: "./rootPath/subPath/form.view.html"
+        path: "./rootPath/subPath/form.view.html",
+        _isFile_: true
     },
     {
         filename: "button.view.html",
-        path: "./rootPath/subPath/button.view.html"
+        path: "./rootPath/subPath/button.view.html",
+        _isFile_: true
     }
 ]
 */
