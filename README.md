@@ -158,6 +158,7 @@ let allFiles = fsn.getGroups(); //-- Return all files found within the root path
 
 
 ### Log ###
+- 1.3.1 - Removed debugging consoles
 - 1.3.0 - Updated output to include "\_isFile\_"
 - 1.2.0 - Typescript Optimization
 - 1.1.1 - Updated a README error

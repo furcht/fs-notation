@@ -142,7 +142,6 @@ export class FsNotation implements FsInterface {
             if(/^\.+/.test(file)) continue; //-- bypass hidden files (MacOS)
             fullPath = this.#rootPath + "/" + file;
             splitRoute = fullPath.split("/");
-            // console.log(splitRoute);
 
             if(/^\.+$/.test(splitRoute[0])) splitRoute.splice(0,1); //-- remove "./" from beginning
 
@@ -166,7 +165,6 @@ export class FsNotation implements FsInterface {
         */
         if(this.#pathLog.length) {
             let pathObj:any = this.#pathLog.pop();
-            console.log("pathObj:", pathObj);
             let baseObj:object = {
                 "filename": pathObj.filename,
                 "path": pathObj.path
@@ -223,7 +221,6 @@ export class FsNotation implements FsInterface {
             pathObj = this.#allFiles[pathID];
             endObj = pathObj ? {"path":pathObj.relPath} : {};
             groupIndex = splittedPath.length-1;
-            console.log("EO:", pathObj);
             splittedPath.forEach((fileName, index) => {
                 if(index!=0) {
                     filenameOG = fileName;
